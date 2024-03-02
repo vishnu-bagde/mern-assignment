@@ -6,7 +6,7 @@ const cors = require('cors');
 
 const app = express();
 const port = process.env.PORT || 5000;
-const uri = process.env.MONGO_URI;
+const uri = process.env.MONGO_CONNECTION_STRING;
 
 const client = new MongoClient(uri, {
     serverApi: {
