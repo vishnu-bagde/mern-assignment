@@ -5,8 +5,8 @@ const { MongoClient, ServerApiVersion } = require('mongodb');
 const cors = require('cors');
 
 const app = express();
-const port = process.env.PORT || 5000;
-const uri = process.env.MONGO_URI;
+const port = 5000;
+const uri = "mongodb+srv://vishnubagde:ZliWHbaNW0KrcNWI@cluster0.rvml39i.mongodb.net/sample_analytics";
 
 const client = new MongoClient(uri, {
     serverApi: {
