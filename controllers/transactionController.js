@@ -3,12 +3,11 @@ const Account = require("../models/Account");
 
 exports.getTransactionsByAccountId = async (req, res) => {
   try {
-    const accountId = parseInt(req.query.account_id, 10);
-    console.log("Received account_id:", accountId);
+    console.log(req.body)
+    const accountId = parseInt(req.body.account_id);
 
     // Await the execution of the query
     const transactions = await Transaction.findOne({ account_id: accountId });
-    console.log("Transactions:", transactions);
 
     return res.json(transactions);
   } catch (error) {
@@ -20,9 +19,6 @@ exports.getTransactionsByAccountId = async (req, res) => {
 exports.getAccountsBelow5000 = async (req, res) => {
   try {
     const accounts = req.body.accounts;
-
-    // console.log(accounts);
-    // return
 
     const filteredAccounts = [];
 

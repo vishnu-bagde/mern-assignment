@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors");
 
 require("dotenv").config();
 
@@ -20,6 +21,7 @@ mongoose
   });
 
 app.use(express.json());
+app.use(cors({origin:true}))
 
 // making default route
 app.get("/", (req, res) => {
